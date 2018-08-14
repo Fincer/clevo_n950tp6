@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Multimonitor Support (ON)
+GenericName=Multimonitor Support (ON)
+Comment=Enable multimonitor support for Optimus Clevo laptops
+Exec=intel-virtual-output -f -b
+TryExec=/usr/bin/intel-virtual-output
+Icon=applications-viewers
+Terminal=false
+Type=Application
+Categories=Utility;
+StartupNotify=false

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Multimonitor Support (OFF)
+GenericName=Multimonitor Support (OFF)
+Comment=Stop multimonitor support for Optimus Clevo laptops
+Exec=killall intel-virtual-output
+Icon=image-missing
+Terminal=false
+Type=Application
+Categories=Utility;
+StartupNotify=false

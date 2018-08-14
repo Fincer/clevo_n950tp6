@@ -1,0 +1,30 @@
+# Maintainer: Pekka Helenius <fincer89 (a) hotmail.com>
+
+pkgname=xf86-intel-multimonitor
+pkgver=1
+pkgrel=1
+pkgdesc="Enable multimonitor support for Nvidia Optimus Clevo laptops via Intel VirtualGL"
+arch=('any')
+#url=""
+license=('GPL')
+depends=('xf86-video-intel' 'libglvnd' 'libgl' 'xorg-server' 'bumblebee') #'nvidia' 'nvidia-dkms'
+source=(20-intel.conf
+xorg.conf.nvidia
+clevo-multimonitor-on.desktop
+clevo-multimonitor-off.desktop)
+md5sums=('e637d2a74b7efe0a3dcc846f50292e4c'
+         '9ba150ba73cd97747531862aae03edcf'
+         '70fc2ea9f62ae5e7df5286e9bf3ba9f5'
+         '436ada85ff846c4d5e38a32e9567730c')
+
+package() {
+  mkdir -p ${pkgdir}/etc/X11/xorg.conf.d
+  mkdir -p ${pkgdir}/etc/bumblebee
+  mkdir -p ${pkgdir}/usr/share/applications/
+  install -m 644 ${srcdir}/20-intel.conf ${pkgdir}/etc/X11/xorg.conf.d/20-intel.conf
+  install -m 644 ${srcdir}/xorg.conf.nvidia ${pkgdir}/etc/bumblebee/xorg.conf.nvidia
+  
+  install -m 755 ${srcdir}/clevo-multimonitor-on.desktop ${pkgdir}/usr/share/applications/clevo-multimonitor-on.desktop
+  install -m 755 ${srcdir}/clevo-multimonitor-off.desktop ${pkgdir}/usr/share/applications/clevo-multimonitor-off.desktop
+}
+
