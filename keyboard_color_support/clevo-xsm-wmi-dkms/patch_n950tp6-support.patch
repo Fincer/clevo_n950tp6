@@ -1,0 +1,17 @@
+--- a/module/clevo-xsm-wmi.c
++++ b/module/clevo-xsm-wmi.c
+@@ -1488,6 +1488,14 @@
+ 		.driver_data = &kb_8_color_ops,
+ 	},
+ 	{
++		.ident = "Clevo N950TP",
++		.matches = {
++			DMI_MATCH(DMI_PRODUCT_NAME, "N95TP6"),
++		},
++		.callback = clevo_xsm_dmi_matched,
++		.driver_data = &kb_full_color_ops,
++	},
++	{
+ 		/* terminating NULL entry */
+ 	},
+ };
