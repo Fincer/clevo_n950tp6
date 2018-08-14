@@ -8,6 +8,24 @@ Various instructions for setting up Linux OS on Clevo N950TP6
 
 ----------------
 
+**Good to know**
+
+- Laptop bought from [Clevo Systems](http://clevo-systems.com/). Fast shipping and candies included. Recommended!
+
+- Came with Windows 10 preinstalled on NVMe SSD (Samsung EVO 960) although I set "No OS" on their website.
+
+- If you had Win10 preinstalled, back it up - create a complete backup of your new NVMe SSD. Just in case. I used `dd`
+
+- You need Grub/Syslinux boot parameters `acpi_osi="!Windows 2015" acpi_osi=Linux` in order to access Linux desktop environment as recent Linux OSes tend to freeze on this laptop while loading DE. This rule applies to Live USB/CDs as well.
+
+- You need a recent Linux kernel (4.14 >) for this laptop
+
+- After proper configuration, everything works as expected. Recommended for Linux usage if you can deal with Nvidia Optimus
+
+- If you don't use UEFI (read: you use traditional HDD instead of fast NVMe SSD), you need to disable `UEFI boot` option in UEFI/BIOS menu. You can re-enable it if you [decided to use UEFI boot](https://github.com/Fincer/clevo_n950tp6/blob/master/ssd_hdd_uefi/notes.md)
+
+----------------
+
 - **[CPU Thermal Control Configuration](https://github.com/Fincer/clevo_n950tp6/blob/master/cpu_thermal_control/notes.md)**
 
     - **What? :** Set a maximum temperature limit for your CPU (intel i7-8700)
