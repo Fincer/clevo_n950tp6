@@ -1,6 +1,9 @@
 # clevo_n950tp6
 Various instructions for setting up Linux OS on Clevo N950TP6
 
+![img_1](https://github.com/Fincer/clevo_n950tp6/blob/master/images/linux-run/linux-run_3.jpg)
+![img_2](https://github.com/Fincer/clevo_n950tp6/blob/master/images/general_5.jpg)
+
 ## Table of contents
 
 ----------------
@@ -18,6 +21,14 @@ Various instructions for setting up Linux OS on Clevo N950TP6
 - **[Laptop Images](https://github.com/Fincer/clevo_n950tp6/blob/master/images)**
 
   - **What? :** Sample images of Clevo N950TP6 laptop
+  
+  - [BIOS/UEFI screens](https://github.com/Fincer/clevo_n950tp6/tree/master/images/bios)
+  
+  - [Linux images](https://github.com/Fincer/clevo_n950tp6/tree/master/images/linux-run)
+  
+  - [General laptop images (enclosure etc.)](https://github.com/Fincer/clevo_n950tp6/tree/master/images)
+  
+  - [Physical interfaces/connections](https://github.com/Fincer/clevo_n950tp6/tree/master/images/inputs)
 
 ----------------
 
