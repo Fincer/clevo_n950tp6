@@ -1,4 +1,4 @@
-### Add the following boot parameters for syslinux/grub for correct GPU handling (Clevo N950TP)
+### Add the following boot parameters for syslinux/grub for correct GPU handling (Clevo N950TP6)
 
 Add these to your boot parameters, either `/boot/syslinux/syslinux.cfg` OR `/boot/grub/grub.cfg` (GRUB configuration file `/etc/default/grub` preferred!):
 
