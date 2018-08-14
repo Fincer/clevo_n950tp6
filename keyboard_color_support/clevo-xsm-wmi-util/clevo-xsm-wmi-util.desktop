@@ -1,0 +1,9 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=Clevo Keyboard Configuration
+Comment=Utility to configure keyboard lightning for Clevo laptops
+Exec=kdesu /usr/bin/clevo-xsm-wmi
+Icon=input-keyboard
+Type=Application
+Categories=Application;Utility;
+StartupNotify=true

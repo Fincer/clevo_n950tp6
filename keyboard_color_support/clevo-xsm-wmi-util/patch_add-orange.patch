@@ -1,0 +1,25 @@
+--- a/module/clevo-xsm-wmi.c
++++ b/module/clevo-xsm-wmi.c
+@@ -66,7 +66,8 @@
+ #define COLORS { C(black,  0x000000), C(blue,    0x0000FF), \
+ 				 C(red,    0xFF0000), C(magenta, 0xFF00FF), \
+ 				 C(green,  0x00FF00), C(cyan,    0x00FFFF), \
+-				 C(yellow, 0xFFFF00), C(white,   0xFFFFFF), }
++				 C(yellow, 0xFFFF00), C(white,   0xFFFFFF), \
++				 C(orange, 0xFF7F00), }
+ #undef C
+ 
+ #define C(n, v) KB_COLOR_##n
+--- a/utility/mainwindow.h
++++ b/utility/mainwindow.h
+@@ -20,8 +20,8 @@
+ #ifndef MAINWINDOW_H
+ #define MAINWINDOW_H
+ 
+-#define COLORS { C(black), C(blue), C(red), C(magenta), C(green), C(cyan), C(yellow), C(white) }
+-#define COLORS_AMOUNT 8
++#define COLORS { C(black), C(blue), C(red), C(magenta), C(green), C(cyan), C(yellow), C(orange), C(white) }
++#define COLORS_AMOUNT 9
+ 
+ #include <QFile>
+ #include <QTextStream>
