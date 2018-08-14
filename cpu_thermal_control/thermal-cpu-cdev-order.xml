@@ -1,0 +1,8 @@
+<CoolingDeviceOrder>
+	<CoolingDevice>intel_pstate</CoolingDevice>
+	<CoolingDevice>rapl_controller</CoolingDevice>
+	<CoolingDevice>intel_powerclamp</CoolingDevice>
+	<CoolingDevice>cpufreq</CoolingDevice>
+	<CoolingDevice>Processor</CoolingDevice>
+</CoolingDeviceOrder>
+

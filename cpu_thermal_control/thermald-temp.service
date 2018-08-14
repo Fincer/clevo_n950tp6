@@ -1,0 +1,10 @@
+[Unit]
+Description=Set temperature limit for Thermal Daemon
+Wants=thermald.service
+After=thermald.service
+
+[Service]
+ExecStart=/usr/bin/dbus-send --system --dest=org.freedesktop.thermald /org/freedesktop/thermald org.freedesktop.thermald.SetUserMaxTemperature string:cpu uint32:72000
+
+[Install]
+WantedBy=multi-user.target
