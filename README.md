@@ -1,20 +1,24 @@
-# clevo_n950tp6
+# Clevo N950TP6
+
 Various instructions for setting up (Arch) Linux OS on Clevo N950TP6
 
-![img_1](https://github.com/Fincer/clevo_n950tp6/blob/master/images/linux-run/linux-run_3.jpg)
-![img_2](https://github.com/Fincer/clevo_n950tp6/blob/master/images/general_5.jpg)
+[Clevo website](https://www.clevo.com.tw)
+![](https://www.clevo.com.tw/images/en/clevo/logo.png)
 
-## Table of contents
+![img_1](images/linux-run/linux-run_3.jpg)
+![img_2](images/general_5.jpg)
+
+## Table of Contents
 
 ----------------
 
-**Good to know**
+### Good to know
 
-- Laptop bought from [Clevo Systems](http://clevo-systems.com/). Fast shipping and candies included. Recommended!
+- Laptop bought from [Clevo Computer](https://clevo-computer.com/) (old link: `http://clevo-systems.com/`, Clevo Systems). Fast shipping and candies included (Europe). Recommended!
 
-- Came with Windows 10 preinstalled on NVMe SSD (Samsung EVO 960) although I set "No OS" on their website.
+- Came with Windows 10 preinstalled on NVMe SSD (Samsung EVO 960) although I set `No OS` on their website.
 
-- If you had Win10 preinstalled, back it up - create a complete backup of your new NVMe SSD. Just in case. I used `dd`
+- If you had Windows 10 preinstalled, back it up - create a complete backup of your new NVMe SSD. Just in case. I used `dd`
 
 - You need Grub/Syslinux boot parameters `acpi_osi="!Windows 2015" acpi_osi=Linux` in order to access Linux desktop environment as recent Linux OSes tend to freeze on this laptop while loading DE. This rule applies to Live USB/CDs as well.
 
@@ -22,56 +26,62 @@ Various instructions for setting up (Arch) Linux OS on Clevo N950TP6
 
 - After proper configuration, everything works as expected. Recommended for Linux usage if you can deal with Nvidia Optimus
 
-- If you don't use UEFI (read: you use traditional HDD instead of fast NVMe SSD), you need to disable `UEFI boot` option in UEFI/BIOS menu. You can re-enable it if you [decided to use UEFI boot](https://github.com/Fincer/clevo_n950tp6/blob/master/ssd_hdd_uefi/notes.md)
+- If you don't use UEFI (read: you use traditional HDD instead of fast NVMe SSD), you need to disable `UEFI boot` option in UEFI/BIOS menu. You can re-enable it if you [decided to use UEFI boot](ssd_hdd_uefi/README.md)
 
 ----------------
 
-- **[CPU Thermal Control Configuration](https://github.com/Fincer/clevo_n950tp6/blob/master/cpu_thermal_control/notes.md)**
+### [CPU Thermal Control Configuration](cpu_thermal_control/README.md)
 
-    - **What? :** Set a maximum temperature limit for your CPU (intel i7-8700)
+- **What? :** Set a maximum temperature limit for your CPU (intel i7-8700)
 
-    - [Files](https://github.com/Fincer/clevo_n950tp6/blob/master/cpu_thermal_control)
+    - [Files](cpu_thermal_control)
 
-    - [PKGBUILD for Arch Linux](https://github.com/Fincer/clevo_n950tp6/blob/master/cpu_thermal_control/PKGBUILD)
-
-----------------
-
-- **[Laptop Images](https://github.com/Fincer/clevo_n950tp6/blob/master/images)**
-
-  - **What? :** Sample images of Clevo N950TP6 laptop
-  
-  - [BIOS/UEFI screens](https://github.com/Fincer/clevo_n950tp6/tree/master/images/bios)
-  
-  - [Linux images](https://github.com/Fincer/clevo_n950tp6/tree/master/images/linux-run)
-  
-  - [General laptop images (enclosure etc.)](https://github.com/Fincer/clevo_n950tp6/tree/master/images)
-  
-  - [Physical interfaces/connections](https://github.com/Fincer/clevo_n950tp6/tree/master/images/inputs)
+    - [PKGBUILD for Arch Linux](cpu_thermal_control/PKGBUILD)
 
 ----------------
 
-- **[Keyboard Backlight & Color Support](https://github.com/Fincer/clevo_n950tp6/blob/master/keyboard_color_support/notes.md)**
+### [Laptop Images](images)
 
-    - **What? :** Control laptop keyboard backlight & colors, patched for Clevo N950 TP6 (tested and works!)
+- **What? :** Sample images of Clevo N950TP6 laptop
 
-    - [Files](https://github.com/Fincer/clevo_n950tp6/blob/master/cpu_thermal_control)
+    - [BIOS/UEFI screens](images/bios)
 
-        - [clevo-xsm-wmi-dkms - PKGBUILD for Arch Linux](https://github.com/Fincer/clevo_n950tp6/blob/master/keyboard_color_support/clevo-xsm-wmi-dkms/PKGBUILD)
+    - [Linux images](images/linux-run)
 
-        - [clevo-xsm-wmi-util - PKGBUILD for Arch Linux](https://github.com/Fincer/clevo_n950tp6/blob/master/keyboard_color_support/clevo-xsm-wmi-util/PKGBUILD)
+    - [General laptop images (enclosure etc.)](images)
 
-----------------
-
-- **[Multi-monitor support](https://github.com/Fincer/clevo_n950tp6/blob/master/multimonitor_and_desktop/xf86-intel-multimonitor/notes.md)**
-
-    - **What? :** Enable multi-monitor support for your Clevo N950TP6 laptop (Linux)
-
-    - [Files](https://github.com/Fincer/clevo_n950tp6/tree/master/multimonitor_and_desktop/xf86-intel-multimonitor)
-
-        - [xf86-intel-multimonitor - PKGBUILD for Arch Linux](https://github.com/Fincer/clevo_n950tp6/blob/master/multimonitor_and_desktop/xf86-intel-multimonitor/PKGBUILD)
+    - [Physical interfaces/connections](images/inputs)
 
 ----------------
 
-- **[UEFI // SSD + HDD configuration](https://github.com/Fincer/clevo_n950tp6/blob/master/ssd_hdd_uefi/notes.md)**
+### [Keyboard Backlight & Color Support](keyboard_color_support/README.md)
 
-    - **What? :** A sample configuration instructions for setting up UEFI and NVMe SSD + HDD on Clevo N950TP6 (Linux)
+- **What? :** Control laptop keyboard backlight & colors, patched for Clevo N950 TP6 (tested and works!)
+
+    - [Files](keyboard_color_support)
+
+        - [clevo-xsm-wmi-dkms - PKGBUILD for Arch Linux](keyboard_color_support/clevo-xsm-wmi-dkms/PKGBUILD)
+
+        - [clevo-xsm-wmi-util - PKGBUILD for Arch Linux](keyboard_color_support/clevo-xsm-wmi-util/PKGBUILD)
+
+----------------
+
+### [Multi-monitor support](multimonitor_and_desktop/xf86-intel-multimonitor/README.md)
+
+- **What? :** Enable multi-monitor support for your Clevo N950TP6 laptop (Linux)
+
+    - [Files](multimonitor_and_desktop/xf86-intel-multimonitor)
+
+        - [xf86-intel-multimonitor - PKGBUILD for Arch Linux](multimonitor_and_desktop/xf86-intel-multimonitor/PKGBUILD)
+
+----------------
+
+### [UEFI // SSD + HDD configuration](ssd_hdd_uefi/README.md)**
+
+- **What? :** A sample configuration instructions for setting up UEFI and NVMe SSD + HDD on Clevo N950TP6 (Linux)
+
+----------------
+
+## Something missing?
+
+If you feel some relevant information is missing or not well explained, please open a new issue on [Github issue tracker](https://github.com/Fincer/clevo_n950tp6/issues). Thank you!
