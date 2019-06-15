@@ -1,28 +1,30 @@
-# Maintainer: Bruno Pagani (a.k.a. ArchangeGabriel) <bruno.n.pagani@gmail.com>
+# Maintainer: Pekka Helenius <fincer89 [at] hotmail [dot] com>
+# Contributor: Bruno Pagani (a.k.a. ArchangeGabriel) <bruno.n.pagani@gmail.com>
 # Contributor: hadrons123 <piruthiviraj at gmail dot com>
 # Contributor: WonderWoofy <sugar.and.scruffy@gmail.com>,wallnuss <v dot churavy at gmail dot com>
-# Contributor: Pekka Helenius (~ Fincer) <fincer89@hotmail.com>
 
 pkgname=thermald
 _pkgname=thermal_daemon
-pkgver=1.7.1
-pkgrel=1
+pkgver=1.8
+pkgrel=2
 pkgdesc="The Linux Thermal Daemon program from 01.org"
 arch=('i686' 'x86_64')
 url="https://01.org/linux-thermal-daemon"
 license=('GPL2')
-makedepends=('systemd')
+makedepends=('systemd' 'python')
 depends=('dbus-glib' 'libxml2')
 backup=('etc/thermald/thermal-conf.xml')
-source=(${pkgname}-${pkgver}.tar.gz::"https://github.com/01org/${_pkgname}/archive/v${pkgver}.tar.gz"
-        'modules-load-thermald.conf'
-        'thermald-temp.service'
-        'thermal-conf.xml'
-        'thermal-cpu-cdev-order.xml')
-sha256sums=('c4465d9312304b879908289e2e9da7417e88151c1529dff42acb8e3fb6aa4f47'
+source=(
+    ${pkgname}-${pkgver}.tar.gz::"https://github.com/01org/${_pkgname}/archive/v${pkgver}.tar.gz"
+    'modules-load-thermald.conf'
+    'thermald-temp.service'
+    'thermal-conf.xml'
+    'thermal-cpu-cdev-order.xml'
+)
+sha256sums=('662456eff5b7ee5a42e54b8a667d002d3a4dec5cacbddc5e1ab5ec94dab218c6'
             '0155e1eb459306d251a5a049ffc6c11e144fa8caa75901ac5fa20bd52e05d515'
-            'aa5f8df79088e7f4821635f28f285bad33d470397b9c65f2ae7873c25aa0d33f'
-            'a567109439e3652942d42dfa38e42af50d5eab8a7c5a2d46905b5c2d6445bf06'
+            '483a5958f177ef109217133ef9e770e4745d5b90d162f2bff9347b49ee735438'
+            '6f85d15a9583e050fec820f2b6a56b42e2e203397433ce9f4ba69be98713eab6'
             'e8fe16460d5003f2b91382d90d72a87082b57f48e9f73d660fec3ba0f4532d02')
 
 build() {
@@ -50,8 +52,7 @@ package() {
   install -Dm644 "${srcdir}"/thermal-cpu-cdev-order.xml "${pkgdir}"/etc/thermald/thermal-cpu-cdev-order.xml
   
   install -Dm644 "${srcdir}"/thermald-temp.service "${pkgdir}"/usr/lib/systemd/system/thermald-temp.service
-  
 
   # Remove Upstart related files
-  rm -r "${pkgdir}/etc/init"
+  rm -rf "${pkgdir}/etc/init"
 }
