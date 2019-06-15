@@ -8,6 +8,48 @@ Partitions:
 
 - HDD/SSD (user files + cache files)
 
+## Table of Contents
+
+- [General overview](#general-overview)
+
+- [Getting started: backups & Arch Linux installation](#getting-started-backups--arch-linux-installation)
+
+- [Partition tables](#partition-tables)
+
+- [Storage roles](#storage-roles)
+
+- [Partition scheme overview](#partition-scheme-overview)
+
+- [Boot loader](#boot-loader)
+
+    - [Boot partition structure](#boot-partition-structure)
+    
+    - [Boot partition permissions](#boot-partition-permissions)
+
+- [Filesystem structure](#filesystem-structure)
+
+- [Mount points overview](#mount-points-overview)
+    
+- [/mnt location overview](#mnt-location-overview)
+    
+- [fstab configuration file](#fstab-configuration-file)
+
+- [syslinux configuration file](#syslinux-configuration-file)
+
+- [mkinitcpio preset file](#mkinitcpio-preset-file)
+
+- [mkinitcpio configuration file](#mkinitcpio-configuration-file)
+
+- [Additional hints](#additional-hints)
+
+    - [Retrieving UUIDs](#retrieving-uuids)
+    
+- [RewriteFS](#rewritefs)
+
+    - [RewriteFS - installation](#rewritefs---installation)
+    
+    - [RewriteFS - fstab example](#rewritefs---fstab-example)
+
 ## General overview
 
 - 3 partitions used in this scheme
