@@ -31,6 +31,12 @@ Various instructions for setting up (Arch) Linux OS on Clevo N950TP6
 
 ----------------
 
+### [UEFI // SSD + HDD configuration, Linux installation](ssd_hdd_uefi/README.md)
+
+- **What? :** A sample configuration instructions for setting up UEFI and NVMe SSD + HDD on Clevo N950TP6 (Linux)
+
+----------------
+
 ### [CPU Thermal Control Configuration](cpu_thermal_control/README.md)
 
 - **What? :** Set a maximum temperature limit for your CPU (intel i7-8700)
@@ -38,20 +44,6 @@ Various instructions for setting up (Arch) Linux OS on Clevo N950TP6
     - [Files](cpu_thermal_control)
 
     - [PKGBUILD for Arch Linux](cpu_thermal_control/PKGBUILD)
-
-----------------
-
-### [Laptop Images](images)
-
-- **What? :** Sample images of Clevo N950TP6 laptop
-
-    - [BIOS/UEFI screens](images/bios)
-
-    - [Linux images](images/linux-run)
-
-    - [General laptop images (enclosure etc.)](images)
-
-    - [Physical interfaces/connections](images/inputs)
 
 ----------------
 
@@ -77,9 +69,17 @@ Various instructions for setting up (Arch) Linux OS on Clevo N950TP6
 
 ----------------
 
-### [UEFI // SSD + HDD configuration](ssd_hdd_uefi/README.md)
+### [Laptop Images](images)
 
-- **What? :** A sample configuration instructions for setting up UEFI and NVMe SSD + HDD on Clevo N950TP6 (Linux)
+- **What? :** Sample images of Clevo N950TP6 laptop
+
+    - [BIOS/UEFI screens](images/bios)
+
+    - [Linux images](images/linux-run)
+
+    - [General laptop images (enclosure etc.)](images)
+
+    - [Physical interfaces/connections](images/inputs)
 
 ----------------
 
