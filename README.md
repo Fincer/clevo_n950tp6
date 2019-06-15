@@ -3,6 +3,7 @@
 Various instructions for setting up (Arch) Linux OS on Clevo N950TP6
 
 [Clevo website](https://www.clevo.com.tw)
+
 ![](https://www.clevo.com.tw/images/en/clevo/logo.png)
 
 ![img_1](images/linux-run/linux-run_3.jpg)
@@ -26,7 +27,7 @@ Various instructions for setting up (Arch) Linux OS on Clevo N950TP6
 
 - After proper configuration, everything works as expected. Recommended for Linux usage if you can deal with Nvidia Optimus
 
-- If you don't use UEFI (read: you use traditional HDD instead of fast NVMe SSD), you need to disable `UEFI boot` option in UEFI/BIOS menu. You can re-enable it if you [decided to use UEFI boot](ssd_hdd_uefi/README.md)
+- If you don't use UEFI (read: you use traditional HDD instead of fast NVMe SSD), you need to disable `UEFI boot` option in [UEFI/BIOS menu](images/bios/bios_4.jpg). You can re-enable it if you [decided to use UEFI boot](ssd_hdd_uefi/README.md)
 
 ----------------
 
@@ -76,7 +77,7 @@ Various instructions for setting up (Arch) Linux OS on Clevo N950TP6
 
 ----------------
 
-### [UEFI // SSD + HDD configuration](ssd_hdd_uefi/README.md)**
+### [UEFI // SSD + HDD configuration](ssd_hdd_uefi/README.md)
 
 - **What? :** A sample configuration instructions for setting up UEFI and NVMe SSD + HDD on Clevo N950TP6 (Linux)
 
