@@ -15,7 +15,7 @@ sudo systemctl start clevo-xsm-wmi.service
 
 ----------------------
 
-If you are not rebooting your computer, do the following in your current session:
+If you don't intend to reboot your computer, do the following in your current session:
 
 ```
 sudo modprobe clevo-xsm-wmi
@@ -33,9 +33,9 @@ You need root rights to alter keyboard lightning!
 
 ----------------------
 
-NOTE: At the moment of writing this, only changing keyboard colors & turning on/off the lightning works. I could not set any modes or alter keyboard brightness via the utility.
+**NOTE:** At the moment of writing this, only changing keyboard colors & turning on/off the lightning works. I could not set any modes or alter keyboard brightness via the utility.
 
-NOTE:
+**NOTE:**
 
 I am using KDE desktop environment. Therfore, I use kdesu command in my `clevo-xsm-wmi-util.desktop` file. If you use GTK or other desktop environment, change the sudo part of the Exec part to suit your needs. For example, I have
 
