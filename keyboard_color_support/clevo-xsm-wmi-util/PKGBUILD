@@ -1,5 +1,5 @@
-# Maintainer: Arnoud Willemsen <mail@lynthium.com>
-# Contributor: Pekka Helenius (~ Fincer) <fincer89@hotmail.com>
+# Maintainer: Pekka Helenius <fincer89 [at] hotmail [dot] com>
+# Contributor: Arnoud Willemsen <mail@lynthium.com>
 
 pkgname='clevo-xsm-wmi-util'
 pkgver='1.1'
@@ -9,10 +9,12 @@ pkgdesc='A GUI control utility for the clevo-xsm-wmi driver.'
 arch=('i686' 'x86_64')
 license=('GPL')
 url='https://bitbucket.org/tuxedocomputers/clevo-xsm-wmi'
-source=("clevo-xsm-wmi-${pkgver}.src.tar.gz::https://bitbucket.org/tuxedocomputers/clevo-xsm-wmi/get/v${pkgver}.tar.gz"
-clevo-xsm-wmi-util.desktop
-patch_n950tp6-support.patch
-patch_add-orange.patch)
+source=(
+    "clevo-xsm-wmi-${pkgver}.src.tar.gz::https://bitbucket.org/tuxedocomputers/clevo-xsm-wmi/get/v${pkgver}.tar.gz"
+    "clevo-xsm-wmi-util.desktop"
+    "patch_n950tp6-support.patch"
+    "patch_add-orange.patch"
+)
 options=(!emptydirs)
 depends=('clevo-xsm-wmi' 'qt5-base')
 
@@ -23,17 +25,17 @@ prepare() {
 }
 
 build() {
-	cd "${srcdir}/tuxedocomputers-clevo-xsm-wmi-${_pkgtag}/utility"
-	qmake && make
+    cd "${srcdir}/tuxedocomputers-clevo-xsm-wmi-${_pkgtag}/utility"
+    qmake && make
 }
 package() {
-	cd "${srcdir}/tuxedocomputers-clevo-xsm-wmi-${_pkgtag}/utility"
+    cd "${srcdir}/tuxedocomputers-clevo-xsm-wmi-${_pkgtag}/utility"
 
-	mkdir -p ${pkgdir}/usr/share/applications/
-	install -m644 ${srcdir}/clevo-xsm-wmi-util.desktop ${pkgdir}/usr/share/applications/clevo-xsm-wmi-util.desktop
-	install -Dm755 clevo-xsm-wmi ${pkgdir}/usr/bin/clevo-xsm-wmi
-	install -Dm644 systemd/clevo-xsm-wmi.service ${pkgdir}/usr/lib/systemd/system/clevo-xsm-wmi.service
-	install -D -m644 /usr/share/licenses/common/GPL2/license.txt "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+    mkdir -p ${pkgdir}/usr/share/applications/
+    install -m644 ${srcdir}/clevo-xsm-wmi-util.desktop ${pkgdir}/usr/share/applications/clevo-xsm-wmi-util.desktop
+    install -Dm755 clevo-xsm-wmi ${pkgdir}/usr/bin/clevo-xsm-wmi
+    install -Dm644 systemd/clevo-xsm-wmi.service ${pkgdir}/usr/lib/systemd/system/clevo-xsm-wmi.service
+    install -D -m644 /usr/share/licenses/common/GPL2/license.txt "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
 }
 sha256sums=('630ff6dbfa90c8a9285badf75b60579b2a9495e85862b62ef77a3654535e4b72'
             '5a7718c3ec49069a93d7bef5d9cfd2ca302eb612f1a8f2e05f3e0aec15047019'
