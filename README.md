@@ -13,6 +13,16 @@ Various instructions for setting up (Arch) Linux OS on Clevo N950TP6
 
 ----------------
 
+**WARNING**
+
+Be aware that Clevo N950TP6 has power issues _which may cause major data loss due to sudden and random shut downs_. This issue occurs if the laptop is directly connected to AC and battery is not used, at least. I have had multiple programs & documents opened and suffered many times from this issue. I don't know if this an OS specific issue. One thing I can say for sure: the issue has nothing to do with workload because it has happened when the computer is idle, too.
+
+The power adapter I use:
+
+![](images/clevo-n950tp6_poweradapter.jpg)
+
+----------------
+
 ### Good to know
 
 - Laptop bought from [Clevo Computer](https://clevo-computer.com/) (old link: `http://clevo-systems.com/`, Clevo Systems). Fast shipping and candies included (Europe). Recommended!
