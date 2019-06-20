@@ -79,6 +79,12 @@ The power adapter I use:
 
 ----------------
 
+### [Misc system configuration](system_conf/README.md)
+
+- **What? :** Various common instructions to configure Arch Linux OS on Clevo N950TP6
+
+----------------
+
 ### [Laptop Images](images)
 
 - **What? :** Sample images of Clevo N950TP6 laptop
