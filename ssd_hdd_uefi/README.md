@@ -43,6 +43,8 @@ Partitions:
 - [Additional hints](#additional-hints)
 
     - [Retrieving UUIDs](#retrieving-uuids)
+
+    - [Kernel updates may break the setup. How to avoid?](#kernel-updates-may-break-the-setup-how-to-avoid)
     
 - [RewriteFS](#rewritefs)
 
@@ -763,6 +765,10 @@ HOOKS=(base udev autodetect modconf block filesystems keyboard fsck)
 ### Retrieving UUIDs
 
 Run `blkid` command as root or with `sudo`.
+
+### Kernel updates may break the setup. How to avoid?
+
+Kernel updates (package `linux` on Arch Linux) tend to break this setup because `vmlinuz-linux` file is installed at `/boot` by default. Because EFI partition is FAT-formatted, you can't create a simple symbolic link from `/boot/vmlinuz-linux` to `/boot_efi/EFI/vzmlinuz-linux` either. Thus, after each kernel update (before rebooting!), _you must copy `/boot/vmlinuz-linux` to `/boot_efi/EFI/` folder either manually or automatically_.
 
 --------------------------
 
