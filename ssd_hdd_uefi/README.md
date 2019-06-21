@@ -157,7 +157,7 @@ B) On Arch Linux based live USB distribution, use `pacstrap` command which is su
 
 - [syslinux configuration file](#syslinux-configuration-file)
 
-- [mkinitcpio preset file](#mkinitcpio-preset-file)
+- [mkinitcpio preset files](#mkinitcpio-preset-files)
 
 - [mkinitcpio configuration file](#mkinitcpio-configuration-file)
 
@@ -659,7 +659,7 @@ LABEL archfallback-rescue
 #        COM32 poweroff.c32
 ```
 
-## mkinitcpio preset file
+## mkinitcpio preset files
 
 Custom `/etc/mkinitcpio.d/linux.preset` file is recommended for this setup. Each time you run `mkinitcpio -p linux` or update Linux kernel or systemd configuration, proper initrd and kernel files are automatically generated in proper location (`/boot_efi/` in this setup) without additional hassle.
 
@@ -682,6 +682,19 @@ default_options="-A esp-update-linux"
 #fallback_config="/etc/mkinitcpio.conf"
 fallback_image="${ESP_DIR}/initramfs-linux-fallback.img"
 fallback_options="-S autodetect"
+```
+
+Additionally, add the following file which ensures that Linux kernel image & `intel-ucode` files are correctly installed when issuing `mkinitcpio -p linux` command.
+
+```
+> cat /etc/initcpio/install/esp-update-linux
+
+ESP_DIR="/boot_efi/EFI"
+
+build() {
+  cp -af /boot/intel-ucode.img "${ESP_DIR}"/
+  cp -af /boot/vmlinuz-linux "${ESP_DIR}"/
+}
 ```
 
 ## mkinitcpio configuration file
@@ -765,10 +778,6 @@ HOOKS=(base udev autodetect modconf block filesystems keyboard fsck)
 ### Retrieving UUIDs
 
 Run `blkid` command as root or with `sudo`.
-
-### Kernel updates may break the setup. How to avoid?
-
-Kernel updates (package `linux` on Arch Linux) tend to break this setup because `vmlinuz-linux` file is installed at `/boot` by default. Because EFI partition is FAT-formatted, you can't create a simple symbolic link from `/boot/vmlinuz-linux` to `/boot_efi/EFI/vzmlinuz-linux` either. Thus, after each kernel update (before rebooting!), _you must copy `/boot/vmlinuz-linux` to `/boot_efi/EFI/` folder either manually or automatically_.
 
 --------------------------
 
@@ -872,7 +881,7 @@ NOTE: When rewritefs is being used, mount order must be /tmp and then /home fold
 -rw-r--r-- root:root /etc/rewritefs.conf
 ```
 
-Common syntax for RewriteFS fstab entry is as follows (not related in this setup):
+Common syntax for RewriteFS fstab entry is as follows (not related to this setup):
 
 ```
 /mnt/home/<user> /home/<user> rewritefs config=/etc/rewritefs.conf,allow_other,uid=<user UID>,gid=<user GID> 0 0
