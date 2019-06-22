@@ -670,6 +670,11 @@ Custom `/etc/mkinitcpio.d/linux.preset` file is recommended for this setup. Each
 
 ESP_DIR="/boot_efi/EFI"
 
+# Get kernel version directly from the generated kernel image file
+# Avoid misleading detection from the running kernel
+#
+KERNELIMG="/boot/vmlinuz-linux"
+
 ALL_config="/etc/mkinitcpio.conf"
 ALL_kver="${ESP_DIR}/vmlinuz-linux"
 
@@ -677,11 +682,11 @@ PRESETS=('default' 'fallback')
 
 #default_config="/etc/mkinitcpio.conf"
 default_image="${ESP_DIR}/initramfs-linux.img"
-default_options="-A esp-update-linux"
+default_options="-A esp-update-linux -k ${KERNELIMG}"
 
 #fallback_config="/etc/mkinitcpio.conf"
 fallback_image="${ESP_DIR}/initramfs-linux-fallback.img"
-fallback_options="-S autodetect"
+fallback_options="-S autodetect -k ${KERNELIMG}"
 ```
 
 Additionally, add the following file which ensures that Linux kernel image & `intel-ucode` files are correctly installed when issuing `mkinitcpio -p linux` command.
