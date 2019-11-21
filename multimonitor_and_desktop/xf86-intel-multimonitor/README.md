@@ -29,3 +29,21 @@ and adds the following configuration file:
 ```
 
 Therefore, you MUST install this package AFTER you have installed bumblebee. And you need to force installation with pacman parameter `--force` (`sudo pacman -U --force package.tar.xz`)
+
+-------------------------
+
+## Usage - personal story
+
+There are two ways I personally use Nvidia card on my Clevo laptop. They are as follows:
+
+- **1)** Multimonitor mode: enable additional display/screen output(s). This is which `intel-virtual-output` executable is for. I use this mode to enable one of the miniDisplayPort output, and attaching one additional monitor to my laptop. Another miniDisplayPort is enabled by default.
+
+- **2)** Nvidia "only" mode: Switch to another TTY session (without X server enabled, only CLI). Start a new X server instance with Openbox DE by issuing command: `nvidia-xrun openbox-session` ([AUR - nvidia-xrun](https://aur.archlinux.org/packages/?O=0&SeB=nd&K=nvidia-xrun&outdated=&SB=n&SO=a&PP=50&do_Search=Go))
+
+Worth noting: These modes can not be run simultaneously. For instance, I need to shut down `intel-virtual-output` process (1) before attempting to launch another X server session (2). Vice versa, I can't execute `intel-virtual-output` if I have a X server session already opened for Nvidia card (2).
+
+In this way, I can control when Nvidia card is turned ON/OFF.
+
+I use mode 1) for basic desktop tasks, and mode 2) for gaming (Steam, GOG, etc.)
+
+Sometimes `intel-virtual-output` can complain about not finding bumblebee. You can try checking your `/etc/X11` conf files.
