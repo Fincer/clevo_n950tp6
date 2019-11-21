@@ -8,12 +8,22 @@ arch=('any')
 #url=""
 license=('GPL')
 depends=('xf86-video-intel' 'libglvnd' 'libgl' 'xorg-server' 'bumblebee') #'nvidia' 'nvidia-dkms'
-source=(20-intel.conf
-xorg.conf.nvidia
-clevo-multimonitor-on.desktop
-clevo-multimonitor-off.desktop)
-md5sums=('e637d2a74b7efe0a3dcc846f50292e4c'
-         '9ba150ba73cd97747531862aae03edcf'
+source=(
+  nvidia-xorg.conf
+  10-intel.conf
+  20-nvidia.conf
+
+  xorg.conf.nvidia.bumblebee
+  xorg.conf.nouveau.bumblebee
+
+  clevo-multimonitor-on.desktop
+  clevo-multimonitor-off.desktop
+)
+md5sums=('85de608633c71bee5462333ab720fe4e'
+         'd0dd2e4b7b7db2ed43b972b558a05ba7'
+         '0e8b9dced2fcf7d027d8505e8e72f209'
+         '186a7dab0c24ec6b60c0ead10881ed95'
+         'e45198dfa8b038e17369a9120076c771'
          '70fc2ea9f62ae5e7df5286e9bf3ba9f5'
          '436ada85ff846c4d5e38a32e9567730c')
 
@@ -21,8 +31,15 @@ package() {
   mkdir -p ${pkgdir}/etc/X11/xorg.conf.d
   mkdir -p ${pkgdir}/etc/bumblebee
   mkdir -p ${pkgdir}/usr/share/applications/
-  install -m 644 ${srcdir}/20-intel.conf ${pkgdir}/etc/X11/xorg.conf.d/20-intel.conf
-  install -m 644 ${srcdir}/xorg.conf.nvidia ${pkgdir}/etc/bumblebee/xorg.conf.nvidia
+
+  # X11 configurations
+  install -m 644 ${srcdir}/10-intel.conf ${pkgdir}/etc/X11/xorg.conf.d/10-intel.conf
+  install -m 644 ${srcdir}/20-nvidia.conf ${pkgdir}/etc/X11/xorg.conf.d/20-nvidia.conf
+  install -m 644 ${srcdir}/nvidia-xorg.conf ${pkgdir}/etc/X11/nvidia-xorg.conf #Must not be in a *.d dir
+  
+  # Bumblebee configurations
+  install -m 644 ${srcdir}/xorg.conf.nouveau.bumblebee ${pkgdir}/etc/bumblebee/xorg.conf.nouveau
+  install -m 644 ${srcdir}/xorg.conf.nvidia.bumblebee ${pkgdir}/etc/bumblebee/xorg.conf.nvidia
   
   install -m 755 ${srcdir}/clevo-multimonitor-on.desktop ${pkgdir}/usr/share/applications/clevo-multimonitor-on.desktop
   install -m 755 ${srcdir}/clevo-multimonitor-off.desktop ${pkgdir}/usr/share/applications/clevo-multimonitor-off.desktop

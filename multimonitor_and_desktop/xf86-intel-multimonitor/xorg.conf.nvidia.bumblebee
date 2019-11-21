@@ -43,7 +43,7 @@ Section "Device"
 EndSection
 
 Section "ServerFlags"
- Option "IgnoreABI" "1" 
+    Option "IgnoreABI" "1" 
 EndSection
 
 Section "Screen"
