@@ -47,3 +47,5 @@ In this way, I can control when Nvidia card is turned ON/OFF.
 I use mode 1) for basic desktop tasks, and mode 2) for gaming (Steam, GOG, etc.)
 
 Sometimes `intel-virtual-output` can complain about not finding bumblebee. You can try checking your `/etc/X11` conf files.
+
+About role of bumblebee: it is required by `intel-virtual-output` binary. Practically, I don't use it for *anything* else.
